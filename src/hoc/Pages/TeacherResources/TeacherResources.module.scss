@@ -1,0 +1,58 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+.TeacherResources{@include sec-default();
+  .leftSide, .rightSide {display: inline-block; width:47%;}
+  .rightSide{float:right;}
+  
+  .BtmRow {@include sec-default(); padding-bottom:15px;
+    // .fullRow{@include sec-default(); margin-bottom: 20px; padding-top:30px; text-align:center;}
+    img{@include center-block();}
+    h3{margin-bottom: 7px; font-weight:bold; font-family:$chels; color:$color1; border-bottom:1px solid rgba($black,.1); padding-bottom:5px;}
+    h4{font-weight:bold; color: $color2; margin-bottom: 5px; font-size:1rem;}
+    p{margin-top:0px;}
+    .additHR{margin:20px 0;}
+    
+    .LPbox{@include sec-default();border-top:1px solid rgba($black,.1); padding-top: 10px;
+      &.first {margin:20px 0 40px; }
+      &.last {
+        // margin-top:10px;
+        max-height:260px; overflow: hidden;
+        br{display: none;}
+      }
+    }
+
+    .resource{padding-bottom:20px;
+      .msLink {
+        // display: inline-block; 
+      // float:none; 
+      // width:205px;
+       margin:10px 0; width:40%;
+        &.right{float:right;}
+        &:first-child, &:last-child {background-color:$color2;}
+      }
+    }
+    
+    
+    li {border-bottom:1px solid rgba($black,.1); padding-bottom:7px;
+      button{color: $color1;padding-left:0;}
+    }
+  }
+  
+  @include bp(tb) {
+    h1.styleB{font-size:1.5rem !important;}    
+  }
+  
+  @include bp(br) {
+    h1.styleB{font-size:1.35rem !important;}    
+  }
+
+  @include bp(oc) {
+    .BtmRow .resource .msLink {
+      &.inline, &.right{width: 250px; float:left; display:block; margin:10px auto;}
+      &:first-child, &:nth-child(3) {background-color:$color2;}
+      &:last-child {background-color:$color1;}
+    }
+  }
+}

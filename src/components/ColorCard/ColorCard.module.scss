@@ -1,0 +1,103 @@
+@import '../../assets/global.scss';
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.ColorCard{@include sec-default();
+  .kcHeader{@include sec-default(); @include sec-bgimage2();
+    background-position: center center; height:300px;
+    position: relative; z-index: 0;
+    &::before{@include before(); background-color: rgba($color1,.5);}
+  }
+  
+  .kcBody{@include sec-default();
+    @include sec-bgimage("../assets/images/iconBG2.png"); background-size:47%; background-repeat: repeat-y;
+    position: relative; z-index: 0;
+    &::before{@include before(); background-color: rgba($white,.95); width:50%;}
+    
+    background-image:url("../../assets/images/iconAlt.png");
+    &::before{background-color: rgba($white,.88);}
+    
+    .kcTitle, .kcContent{display: inline-block;}
+    .kcTitle{width:25%; 
+      margin-top:-10%;
+      background-color:$color2;
+      padding: 30px 20px 20px; text-align: center;
+      box-shadow: 0px 5px 18px rgba($black,.25);
+      position: relative; z-index:1;
+      &::before{@include before(); border:1px solid rgba($f0, .5); left:-5%; top:5%;}
+        //  @include rotate(-5deg);
+      &::after{@include before(); border:1px solid rgba($f0, .5); left:5%; top:-5%;}
+      
+      h1{color: $white; font-size:2.2rem; text-transform: uppercase; letter-spacing: 1px;
+        span{font-size:1.9rem;}
+      }
+    }
+    .kcContent{width:50%; float:right; padding: 50px 0;}
+  }
+  // Book Now
+  &.style2 .kcBody{
+    background-size:40%;
+    &::before{width:40%;}
+    .kcTitle{width:30%; background-color: $color1;}
+    .kcContent{width:60%;}
+  }
+    
+  @include bp(tb) {
+    .kcHeader{height:180px;}
+    
+    .kcBody, &.style2 .kcBody{
+      background-size:35%; background-repeat: repeat;
+      &::before{width:100%;}
+      &::after{@include before(); width:66%; left:29%; background-color:$white;}
+      
+      .kcTitle{width:20%; float:left; padding: 30px 10px 20px;
+        h1{font-size: 1.7rem;}
+      }
+      .kcContent{width:60%; padding: 35px 0; float:none; margin-left:8%; }
+    }
+    
+    &.style2 .kcBody .kcTitle{width:22%;}
+    
+  }
+
+  @include bp(br) {
+    &.style2 .kcBody .kcTitle h1 {font-size: 1.5rem;}    
+  }
+  
+  
+  @include bp(tn) {
+    .kcHeader{height:80px; @include sec-bgimage('../assets/images/wetlands2.jpg');}
+    
+    .kcBody, &.style2 .kcBody{background-image:none;
+      &::after{display: none;}
+      &::before{display: none;}
+      
+      .kcTitle{width:90%; margin-left:5%; margin-top:-30px;margin-bottom:30px; padding: 10px 5px; 
+        &::before{width:90%; height:80%; left:5%; top:8%; display: none;}
+        &::after {display: none;}
+        h1{font-size: 1.4rem; margin:0;
+          br{display: none;}
+        }
+      }
+      
+      .kcContent{width:75%; @include center-block();}
+    }
+    &.style2 .kcBody {padding-bottom: 25px;
+      .kcTitle {margin-bottom: 0;}
+      .kcContent{padding-top:0; }
+    }
+  }
+  
+  @include bp(pl) {
+    // .kcBody .kcTitle h1{font-size: 1.4rem;}
+  }
+  
+  @include bp(oc) {
+    .kcHeader{height:70px;}
+    
+    .kcBody, &.style2 .kcBody{
+      .kcContent{width:90%; }
+    }
+  }
+  
+}

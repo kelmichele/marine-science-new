@@ -1,0 +1,63 @@
+@import '../../assets/global.scss';
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.Footer {@include sec-default(); background-color: $color2;
+  a,p,h5 {color:$white;}
+  h4{font-family: $chels; text-shadow:0px 1px 1px rgba($black,.2); margin-bottom: 30px;font-size:1em;
+    position: relative; z-index: 0; color:$white; font-weight:bold; 
+    &::after {@include after(); height:5px; bottom: -3px; border-bottom:1px solid rgba($lt2,.2);left:0;}
+  }
+  li{margin-bottom: 10px;
+    a {font-size:15px;}
+  }
+  
+  .FtLogo img {width:170px; margin-top:20px;}
+  
+  .TopFoot {@include sec-default();  padding: 20px 0; 
+    // @include sec-bgimage('../../assets/images/logo-msLt.png'); 
+    // background-size: 10%; background-position: center bottom; 
+  }
+
+  .btmFoot {@include sec-default(); background-color: darken($color2, 18%);padding:9px 0 7px;
+    p, a {font-size:14px; margin:0;}
+    .hs, .copy{display: inline-block;width:50%; }
+    .hs{float:right; text-align: right; width:40%;}
+  }
+
+  
+  
+  .git, .gin {display: inline-block;}
+  .git{width:65%; float:left; margin-left:5%;
+    h4::after {width:47%;}
+    p{font-size:15px; margin:0px 0 7px;}
+  
+    .cLeft, .cRight {display: inline-block; width:48%;}
+    .cLeft{float:left;}
+    .cRight{float:right; margin-right:-6%;}
+  
+  }
+  .gin {width: 30%; width:29%; float:right; margin-right:-3%;}
+  
+  
+  @include bp(br) {
+    h4{font-size:15px;}
+  }
+
+  @include bp(tn) {
+    .TopFoot .med3Def{width:350px;}
+    .git, .gin {@include sec-default(); margin:0;}
+    .git {margin-bottom: 30px;
+      h4::after {width:100%;}
+      .cLeft, .cRight{@include sec-default(); margin:0;}
+      .cRight{margin-top:20px;}
+    }
+    
+    .btmFoot {
+      .hs, .copy{@include sec-default(); text-align: center;}
+    }
+  }
+  @include bp(sm) {
+    .TopFoot .med3Def{width:300px;}
+  }  
+}

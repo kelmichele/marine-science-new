@@ -1,0 +1,69 @@
+@import '../../assets/global.scss';
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.ImgGrid{@include sec-default();
+  .IgBox{
+    margin:40px 0 40px; font-size:17px; display: inline-block; width:47%; 
+    &:nth-child(2n+2) {float:right; clear:both;
+      .mobileImg {display: block;}
+      .fwImg{display:none;}
+    }
+
+    .textBox{width:90%; float: right; border-left: 2px solid rgba($color2,.3); padding:15px 0 15px 20px;}
+    h4{font-size: 21px; font-weight:bold; color: $color1; font-family: $chels; margin:0 0 3px;}
+    p{color: $color2; font-size:17px;font-weight:bold; font-family: $chels; margin:0;}
+    .mobileImg{display: none;}
+  }
+
+  @include bp(tb) {
+    .IgBox{
+      .textBox{padding:15px 0 15px 10px;}
+      h4 {font-size:18px; margin-bottom: 1px;}
+      p{font-size:16px;}
+    }
+  }
+  
+  @include bp(br) {
+    &.longer .IgBox{
+      h4 {font-size:16px;}
+      p{font-size:15px;}
+    }
+  }
+
+  @include bp(tn) {
+    // .med3Def{width:90%;}
+    // .IgBox{margin:25px 0; 
+    //   .textBox{width:92%;}
+    //   h4 {font-size:16px;}
+    //   p{font-size:15px;}
+    // }
+    
+    .IgBox{margin:15px 0; width:90%;
+      .textBox{width:90%;}
+      h4 {font-size:16px;}
+      p{font-size:15px;}
+      
+      .fwImg{display: none;}
+      .mobileImg{display: block;}
+    }
+  }
+
+  @include bp(mb) {
+    .med3Def{width:70%;}
+    .IgBox{margin:15px 0; width:90%;
+      .textBox{width:90%;}
+      .fwImg{display: none;}
+      .mobileImg{display: block;}
+    }
+  }
+
+  @include bp(ph) {
+    .med3Def{width:80%;}
+  }
+
+  @include bp(sm) {
+    .med3Def{width:90%;}
+  }
+  
+}

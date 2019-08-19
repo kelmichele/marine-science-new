@@ -1,0 +1,27 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.TripMaps {@include sec-default(); }
+// .mapBox{height:410px; width:45%; display:inline-block; overflow:hidden;}
+// .mapFrame{@include sec-default(); position:relative; top:-65px; border:none;}
+
+// .infoBox, iframe {display: inline-block; width:48%;}
+// iframe{height:400px; float:right;}
+
+.medBox {display: inline-block; width:46%;
+  &:nth-child(2n+2) {float:right;}
+}
+
+@include bp(tn) {
+  .med2Def{width: 60%;}
+}
+@include bp(oc){
+  .med2Def{width:75%;}
+  .medBox, .medBox:nth-child(2n+2) {@include sec-default(); text-align: center;}
+}
+
+@include bp(sm){
+  .med2Def{width:90%;}
+}

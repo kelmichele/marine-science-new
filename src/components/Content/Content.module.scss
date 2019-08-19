@@ -1,0 +1,7 @@
+@import '../../assets/global.scss';
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+Main {@include sec-default();
+  // justify-content: center;
+}

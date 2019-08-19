@@ -1,0 +1,27 @@
+@import './assets/global.scss';
+@import './assets/variables.scss';
+@import './assets/mixins.scss';
+
+.ToTopBtn{background-color: $white; margin-right:-15px;}
+
+
+.CalNot{display: none;}
+.Cal{@include sec-default(); padding:20px 0;
+  h2, p, a{font-family: $chels;}
+  h2{font-size:20px;margin-bottom: 0px; 
+    a{color:$color1;}
+  }
+  p{margin:0 0 5px; color:$color2; font-size:16px;
+    a{color:$color2;}
+  }
+  img{margin:10px 0;}
+  
+  h1{font-size:1.4rem; color: $color1; margin:0 0 5px;}
+
+
+  @include bp(tb) {
+    h2{font-size:19px;}
+    p{font-size:15px;}
+    // a img{width:80%; @include center-block();}
+  }
+}

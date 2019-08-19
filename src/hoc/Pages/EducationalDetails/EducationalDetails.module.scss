@@ -1,0 +1,94 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.EducationalDetails{@include sec-default();
+	h4{margin-bottom:10px; font-weight:bold; padding-left:10px;}
+  p.color2{color:$color2;}
+
+	// .GradeInfo {@include sec-default(); padding: 30px 0 50px;}
+	.GradeItem{
+		padding-bottom:15px; border-bottom: 1px solid rgba($black,.1);position: relative;
+	  button {background-image:none; background:transparent; border:none; font-family: $chels; }
+		button::before {margin-left:auto; left:95%; position: absolute;}
+	}
+
+	.overView{@include sec-default(); padding:40px 0 25px; margin:20px 0 0; text-align:center; background-color:darken($color2,5%);
+    p{color:$white;font-size:17px; text-shadow:0px 1px 1px rgba($black, .6); font-weight: 600;}
+  }
+
+
+
+	.Objectives{@include sec-default(); padding-top:10px;
+    hr{margin-bottom:40px;}
+  }
+  .MsObj3{@include sec-default(); margin-bottom: 80px; padding:45px 0 50px;
+    position: relative; z-index:0;
+    &::before{@include before(); width:25%; left:80%; 
+      background-color: $color2;
+      // background-color: $color1;
+    }
+
+    .MsoInner, .GradeTable {display: inline-block; }
+    .MsoInner{ width:30%; margin-top:13%;
+      &.less{margin-top: 7%;}
+      &.short{margin-top: 3%;}
+    }
+    .GradeTable{width:70%; float: right;}
+
+    .objNum{
+      position: absolute; z-index: -1; margin-top:-18px; line-height: .7em;
+      color: #ddd; font-weight: bold; font-size: 95px; text-transform: uppercase;
+      // color:$lt2;
+      opacity: .6;
+      span{font-size:16px; letter-spacing: 2px; color: $black;}
+    }
+    h4{font-weight:bold; font-size:1.5rem; margin:0px 0 30px; text-transform: capitalize; color:darken($color2, 15%);}
+    h5{font-family: $chels;}
+
+    &:nth-child(2n+2) {
+      &::before{left:-6%;}
+      .MsoInner {float:right; text-align: right;}
+			.objNum{right:0;}
+      .GradeTable {float:left; margin-right: 0;}
+    }
+  }
+  
+  .mobileObj{display: none;}
+  
+  @include bp(tb) {
+    .Objectives .med3Def{width:85%;}
+    .MsObj3{ margin-bottom: 50px;}
+  }
+  
+  @include bp(tn) {
+    .intro {padding:10px 0 0;
+      p {font-size:16px; }
+    }
+    .MsObj3{margin-bottom: 35px; padding:45px 0 50px;
+      &::before{width:25%; left:80%; }
+
+      .MsoInner{ width:20%;}
+      .GradeTable{width:78%;}
+
+      .objNum{font-size: 80px;}
+      h4{ font-size:1.2rem;}
+
+    }
+  }
+  
+  @include bp(mb) {
+    .Objectives{display: none;}
+    .mobileObj{@include sec-default(); margin-top:30px;
+      button {font-size: 1.1rem;}
+      .custContent{position: relative; z-index: 0; 
+      // padding:10px 30px 30px; background-color:transparent;
+        // &::before{display: none;}
+        // &::after{@include after(); background-color: $color2; height:30%; bottom:0; z-index: 12;}
+        // table{@include center-block(); width:90%;}
+      }
+    }
+  }
+  
+}

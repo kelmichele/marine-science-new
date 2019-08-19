@@ -1,0 +1,37 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+@import '../../assets/global.scss';
+
+.Parallax{min-height:500px; padding:10%; background-size:cover;
+  &.fw {background-size:100%;}
+  
+  // &.homePlax {padding: 13% 10%;}
+  &.homePlaxAlt {padding: 6% 6% 5%;}
+  &.homePlax {padding: 10% 6% 5%;
+    @include bp(tb) {
+      min-height:350px;
+    }
+    
+    @include bp(tn) {
+      min-height: 270px;
+    }
+    
+    @include bp(oc) {
+      min-height: 180px;background-size:100%;background-repeat: repeat;
+      padding:60px 30px 0px;
+      max-height:220px; overflow: hidden;
+      background-position: top right;
+    }
+    
+    @include bp(sm) {
+      min-height: 100px;
+      padding:45px 30px 0px;
+    }
+  }
+  &.AffPlax {padding: 0; height:600px; background-position: center center;}
+
+  &.true,&.heavy{z-index: 0; position:relative;
+    &::before {@include before(); background-color: rgba($black,.2);}
+  }
+  &.heavy::before {background-color: rgba($black,.5);}
+}

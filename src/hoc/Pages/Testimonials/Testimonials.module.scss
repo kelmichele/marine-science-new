@@ -1,0 +1,122 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.Testimonials{@include sec-default(); padding-bottom: 40px;
+  .linkRow{@include sec-default(); margin:20px 0; text-align: center;
+    .secLink {display: inline-block; width:22%; margin:5px 1%;
+      padding:10px 0; border:2px solid $color2; color:$color2; font-weight:600;
+      box-shadow: 0px 5px 18px rgba($black,.15);
+    }
+  }
+
+  .TestiSec{@include sec-default(); margin:40px 0;
+    .TestiVid {display: inline-block; width:56%; height:310px;
+      &.right{float: right;}
+    }
+    .TestiBlock{ @include sec-default(); margin:40px 0 30px;
+      &.right{float: right;}
+      &.inline{width:40%; display: inline-block; margin-top:7%;}
+      &.lessTop{margin-top:2%;}
+    }
+
+    .chapSec, .seminarSec {
+      .TestiBlock{width:47%; display: inline-block; }
+      .TestiBlock:nth-child(2n+2){float: right;}
+    }
+
+    h3{font-family: $chels; font-weight:bold; font-size:1.5rem;
+      border-bottom:1px solid rgba($black,.1); padding-bottom:7px; color: $color1; 
+    }
+
+    p.TestiContent {margin:0;padding-left:2px;
+      position: relative; z-index: 0; 
+      // &::before {@include before(); @include sec-bgimage('../../../assets/images/quotes1.png') left: -15px; width:15px;}
+      // &::after {@include after(); @include sec-bgimage('../../../assets/images/quotes2.png') right: -15px; bottom:-15px; width:15px;}
+      &::before {@include before(); width:105%; opacity: .2;
+        background-image: url('../../../assets/images/quotes1.png'), url('../../../assets/images/quotes2.png');
+        background-size:16px, 16px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: top left, bottom right;
+        left:-25px; top:-5px;
+      }
+    }
+    p.TestiName {margin:7px 0 0; font-weight:bold; color:$color1;font-size:15px;}
+    .testiLink{@include sec-default(); margin-bottom: 20px; color: orange; font-weight: bold;}
+  }
+
+  .TestSec{@include sec-default(); 
+    // margin:40px 0; 
+    h3{font-family: $chels; font-weight:bold; font-size:1.5rem;
+      border-bottom:1px solid rgba($black,.1); padding-bottom:7px; color: $color1; 
+    }
+    .IgBox{ margin:40px 0 40px; font-size:17px; display: inline-block; width:47%; 
+      .TestiVid{width:100%; height:310px;}
+      .testiBox{
+        border:1px solid rgba($color2,.2);
+        p{
+          padding:25px 0; 
+          margin-bottom: 0; 
+          width:88%; @include center-block();
+        }
+      }
+      &.VideoIB .testiBox{border:none;
+        &::before, &::after{display: none;}
+      }
+      &.fwIB{@include sec-default();
+        .testiBox{padding:20px 0;
+          .quote, p{display: inline-block; width:30%; vertical-align: top;}
+          p{width:63%; float:right; padding:0; margin-right:2.5%;}
+          .quote{margin-left:2.5%; margin-top:7%;
+            color:$black; font-size:19px; font-family:$chels;
+          }
+        }
+      }
+      
+      .titleBox.mobileTitle{display: none;}
+    }
+    .IgBox{float:right;
+      &:nth-child(2n+2) {float:left; clear:both;
+        .titleBox.mobileTitle {display: block;}
+        .titleBox.fwTitle{display:none;}
+      }
+
+      .titleBox{width:90%; float: right; border-left: 2px solid rgba($color2,.3); padding:15px 0 15px 20px;}
+      .testiBox{@include sec-default();}
+      h4{font-size: 21px; font-weight:bold; color: $color1; font-family: $chels; margin:0 0 3px;}
+      .titleBox p{color: $color2; font-size:17px;font-weight:bold; font-family: $chels; margin:0;}
+    }
+  }
+  @include bp(tb) {
+    .TestSec .IgBox{ margin:20px 0; font-size:16px;
+      h4{font-size: 19px;}
+    }
+  }
+  
+  @include bp(tn) {
+    .med2Def{width:75%;}
+    .TestSec .IgBox{ 
+      margin:15px 0; width:90%;
+      .titleBox{width:90%;}
+      font-size:15px;
+      h4{font-size: 17px;}
+      .titleBox.mobileTitle{display: block;}
+      .titleBox.fwTitle{display:none;}
+      
+      .testiBox p{padding:15px 0; width:92%;}
+      
+      &.fwIB{
+        .testiBox{padding:17px 0;
+          p{width:92%; @include center-block(); padding: 0; margin-top:0;}
+          .quote{display: none;}
+        }
+      }
+    }
+  }
+  
+  @include bp(oc) {
+    .med2Def{width:90%;}
+    .TestSec .IgBox{ margin:10px 0; }
+  }
+}

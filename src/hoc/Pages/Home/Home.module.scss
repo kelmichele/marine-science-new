@@ -1,0 +1,342 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+.Home {
+  .msLink.gradi{border:1px solid $color2; text-shadow:0px 1px 1px rgba($black,.5); 
+    background: linear-gradient(45deg, $color1 30%, $color2 90%);
+  }
+  
+  .SiteIntroVideo{overflow: hidden; margin-top:-15px;
+    position: relative; z-index:0; &::before{@include before(); background-color: rgba($black,.3); z-index:2;}
+
+    .IntroLax{
+      background:transparent; position: absolute; z-index: 4; text-align:center;
+      margin-top:250px; 
+      width:100%;
+      h1, h2, h3, p{color: $white; text-shadow: 0px 1px 1px rgba($black, .8);position:relative;text-align: center;}
+      h1.big {font-size:3rem; margin-bottom: 0;}
+      h2{margin-top: 0; margin-bottom: 40px; margin-bottom: 10px; font-size:1.45rem; font-weight: 600;}
+      .homeSpacer {@include sec-default(); margin-bottom: 35px;}
+
+      .msLink{text-shadow:0px 0px 1px rgba($black,.5); font-size:17px; letter-spacing: 0; margin: 5px 10px;
+        box-shadow: 0px 5px 18px rgba($black,.25); 
+        width:180px;
+       
+        &.inv{color:$color2; border-color:$color2;}
+      }
+    }
+  }
+  
+  .mediaRow{@include sec-default(); padding:80px 0 60px; position: relative; z-index:0;
+    &::before{@include before(); width:50%; z-index: -2; @include sec-bgimage('../assets/images/wetlands2.jpg'); background-size:cover;}
+    &::after{@include before(); width:50%; background-color: rgba($f9,.9);}
+    
+    .textEs{@include sec-default(); margin:35px 0 0; text-align: center;
+      h3{color: $dk2; text-shadow: 0px 1px 1px rgba($black, 0); margin:0;}
+      h3{font-size:17px; font-weight:600; letter-spacing: .35px;}
+      h3 span{font-family: $chels; font-size: 25px; color: $color1;}
+    }
+    
+    // .vidHlf{width:70%;@include center-block();
+    //   iframe {width:100%; height:483px;}
+    // }
+    
+    .vidHlf{@include sec-default();
+      iframe { width:857px; height:483px; @include center-block();}
+    }
+  }
+  
+  .photoLayRow{@include sec-default(); padding:80px 0 0px; position:relative; margin-bottom: 50px;
+    .plText, .PLimg{display: inline-block; z-index: 1; position:relative;}
+    
+    .PLRone {width:80%;position:relative;
+      .plText{width:48%;}
+      .zLow {width:50%;}
+      .zTop{margin-top:-100px; z-index: 3; width:45%; margin-left:20%; }
+    }
+    
+    .PLRtwo {position: absolute; width:45%; right:0;bottom:5px;
+      .zBot {width:100%; z-index: 0; margin-bottom: 15px;}
+    }
+  
+    h3{color: $dk2; text-shadow: 0px 1px 1px rgba($black, 0); margin:0;font-size:17px; font-weight:600; letter-spacing: .35px;}
+    h3 span{font-family: $chels; font-size: 25px; color: $color1;}
+    .msLink.inline.gradi{border:none; margin:10px 0px 0; padding:7px 15px; font-size:14px;
+      // background: transparent; color:$color2; text-decoration: underline; text-shadow:none; font-size:15px; padding:0;
+    }
+  }
+  
+  .instaWidgetWrap{ text-align: center; margin:50px auto 75px; @include center-block(); width:95%;padding:70px 0 90px; 
+    position: relative; z-index: 0;&::before{@include before(); background-color:$f8; width:107.5%; left:-5%;}
+    
+    h3{font-size:21px; font-weight:600; font-family: $chels; color:$dk2; margin-bottom: 15px;}
+  }
+  .instaWidget{height:300px;}
+  
+  .testOverBox{width:450px;float:right;margin-right:3%; margin-top:-125px; position: relative; z-index:0;}
+  
+  .AffSec{@include sec-default(); padding:20px 0 120px;background-color: $white;
+    .AffText, .logoRowA {display: inline-block;}
+    .AffText{width:33%; float:left; margin-left: -1%;
+      h4{color: $dk2; margin-bottom: 7px; font-weight: bold; font-size:1.1rem;}
+      p {margin-bottom: 7px; margin-top:0;}
+      a{text-decoration: underline; color:$color2;}
+    } 
+    
+    .logoRowA{width:67%; float:right; margin-right:-4%; text-align: center;
+      .logoImg{display: inline-block; float:none;
+        width: 22.5%; margin:0px 2% 0px 0; height:150px; 
+        @include sec-bgimage('../assets/images/wetlands2.jpg'); background-size:cover; 
+        position: relative; z-index: 0; 
+
+        img{@include center-block(); padding:5px 7px; margin-top:30px;}        
+
+        &::before{@include before(); background-color: rgba($white,.85);}
+        &:first-child{background-position: bottom center;}
+        &:nth-child(2){background-position: left center;}
+        &:last-child{background-position: bottom right;}
+      }
+    }
+  }
+  
+  .ukCustomPos{background-color:rgba($black,.5); width:100%; height:100%; padding:0;}
+  .photoItems{@include sec-default();min-height:auto !important; height:570px;}
+  .ArrowRules{margin-top:25%;}
+  .photoGall {@include sec-default(); margin-left:0; margin-top:0px;
+    h3{font-size:26px; font-weight:bold; font-family:$chels; color: $f9; text-shadow: 0px 1px 1px rgba($black, .8);
+      width:35%; margin-top:8%; margin-left:5%;
+    }
+
+    .SlideNav {margin-top: 20px; text-align:center;
+      li a{background: $color1; border-color:$color2;}
+    }
+
+    .uk-position-center-left.uk-position-small,
+    .uk-position-center-right.uk-position-small,
+    .ArrowRules{z-index:9999; background-color: rgba($black,.5); color:$white;
+      span{font-size:30px;}
+    }
+  }
+  
+  
+  @media  (max-width:1200px) {
+    .SiteIntroVideo{
+      .IntroLax {margin-top:150px;
+        h1.big {font-size:2.7rem;}
+        h2{font-size:1.35rem;}
+      }
+    }
+    
+    .mediaRow .vidHlf iframe { width:750px; height:422px;}
+    
+    .photoLayRow{padding:50px 0 0px;}
+    
+    // .instaWidgetWrap iframe{max-height:240px;}
+    
+    .AffSec{
+      .AffText{width:30%; margin-left: 1%;
+        h4{font-size:1rem;}
+        a {font-size:15px;}
+      } 
+      
+      .logoRowA{width:67%;  margin-right:0; }
+    }
+    
+    .photoItems{height:500px;}
+  }
+  
+  @include bp(tb) {
+    .SiteIntroVideo{margin-top:0;
+      .IntroLax {margin-top:150px;
+        h1.big {font-size:2.2rem;}
+        h2{font-size:1.2rem;}
+        .homeSpacer {margin-bottom: 20px;}
+        .msLink{font-size:16px;}
+      }
+    }
+    
+    .mediaRow{padding:60px 0 40px;
+      .textEs h3{font-size:16px;
+        span{font-size:23px;}
+      }
+    }
+   
+    .photoLayRow{margin-bottom: 15px;
+      h3{font-size:16px;
+        span {font-size:23px;}
+      }
+      .PLRone {
+        .zTop{margin-top:-80px; margin-left:17%; }
+      }
+    } 
+    
+    .instaWidgetWrap{margin:40px auto; padding: 50px 0 10px;}
+    
+    .AffSec{padding:0px 0 50px; text-align:center;
+      .AffText{width:70%; @include center-block();} 
+      
+      .logoRowA{ margin-top:30px;@include sec-default();
+        .logoImg{width:145px; margin:0 1%; height:auto; padding-bottom:30px;} 
+      }
+    }
+    
+    .photoGall h3{ width:48%; font-size:23px; } 
+    .photoItems{height:450px;}
+  }
+  
+  @include bp(nn) {
+    .SiteIntroVideo{min-height:550px; @include sec-bgimage("../assets/images/timelapseStill.png");background-size: cover;
+      .IntroLax {margin-top:160px;
+        h1.big {font-size:2rem;}
+        h2{font-size:1.1rem;}
+        .homeSpacer {margin-bottom: 10px;}
+        .msLink{font-size:15px;}
+      }
+    }
+  }
+  
+  @include bp(tn) {
+    .mediaRow {
+      .textEs h3{font-size:15px;
+        span{font-size:21px;}
+      }
+      .vidHlf iframe { width:550px; height:310px;}
+    }
+    
+    .photoLayRow{margin-bottom: 0px;
+      h3{font-size:15px;
+        span {font-size:21px;}
+      }
+      .PLRone, .PLRtwo {@include sec-default();
+        .plText, .zLow,.zBot, .plText {width:42%; float:none; margin-left:5%;}
+        .zTop{display: none;}
+        .zBot{margin-top:-150px; width:43%;}
+      }
+      
+      .PLRtwo {position: relative; @include sec-default(); right:auto;bottom:auto; margin-top:20px;}
+    }     
+    
+    .instaWidgetWrap{margin:40px auto; padding: 30px 0 10px;
+      h3{font-size:19px; }
+    }
+    
+    .photoItems{height:355px;}
+    .photoGall h3{ width:60%; font-size:20px;}
+    .uk-position-center-left.uk-position-small,
+    .uk-position-center-right.uk-position-small,
+    .ArrowRules {top:20px;
+      span{width:20px; height:20px;}
+    }
+  }
+  
+  @include bp(md) {
+    .mediaRow .textEs h3 span{font-size:20px;}
+    .photoLayRow{
+      h3 span {font-size:20px;}
+      
+      .PLRone, .PLRtwo {
+        .plText, .zLow,.zBot, .plText {width:48%; float:none; margin-left:0;}
+        .zBot{margin-top:-140px;}
+        .zLow{float:right;}
+      }
+      .PLRone .plText{margin-top:40px;}
+      .PLRtwo .plText{float:right;}
+    }
+    
+    .AffSec{
+      .AffText{width:85%; }
+    }
+  }
+  
+  @include bp(mb) {
+    .mediaRow .vidHlf iframe {width:500px; height:282px;}
+    
+    .photoLayRow{
+      .PLRtwo .zBot{margin-top:-100px;}
+    }
+    
+    .AffSec{
+      .AffText{width:95%; }
+      .logoRowA{ width:400px; @include center-block();margin-top:15px;
+        .logoImg{width:145px; margin:0 1%; height:auto; padding-bottom:30px; margin-top:15px;} 
+      }
+    }
+    
+    .photoItems{height:275px;}
+    .photoGall h3{ width:70%; font-size:19px;}
+  }
+  
+  @include bp(oc) {
+    .mediaRow{padding:30px 0 20px}
+    .photoLayRow{padding:0;
+      .PLRone, .PLRtwo {
+        .plText, .zBot, .zLow {@include sec-default(); text-align: center; margin-top:0;}
+        .zBot{width:50%;@include center-block();}
+        .zLow, .zBot{display: none;}
+      }
+    }
+    
+    .instaWidgetWrap{margin:40px auto; padding: 30px 0 40px;
+      h3{font-size:17px; }
+      iframe{max-height:200px;}
+    }
+  }
+  
+  @media only screen and (max-width:500px) {
+    .SiteIntroVideo{min-height:470px;
+      .IntroLax {margin-top:120px;
+        h1.big {font-size:1.6rem;}
+        h2{font-size:1rem;}
+        .msLink{font-size:14px;}
+      }
+    }
+    
+    .mediaRow {
+      .vidHlf iframe { width:400px; height:225px;}
+    }
+    
+    .instaWidgetWrap{margin:40px auto; padding: 30px 0 40px;
+      iframe{max-height:160px;}
+    }
+    
+    .photoItems{height:180px;}
+    .photoGall {
+      h3{ width:85%; font-size:16px;}
+    }
+    .uk-position-center-left.uk-position-small,
+    .uk-position-center-right.uk-position-small,
+    .ArrowRules {margin-top:140px;
+      span{width:20px; height:20px;}
+    }
+  }
+  
+  @include bp(sm) {
+    .SiteIntroVideo{
+      .IntroLax {
+        h1.big {font-size:1.45rem;}
+        h2{font-size:15px;}
+      }
+    }
+    
+    .mediaRow {
+      .vidHlf iframe { width:350px; height:197px;}
+    }
+    
+    .instaWidgetWrap{margin:40px auto 20px; padding: 30px 0 20px;}
+    
+    .AffSec{padding:10px 0 30px;
+      .AffText{@include sec-default();
+        p{font-size:15px;}
+      }
+      .logoRowA{@include sec-default();
+        .logoImg{width:145px; margin:0 1%; height:auto; padding-bottom:30px; margin-top:15px;} 
+      }
+    }
+  }
+  
+  @include bp(xs) {
+    .mediaRow .vidHlf iframe { width:350px; height:180px;}
+  }
+  
+}

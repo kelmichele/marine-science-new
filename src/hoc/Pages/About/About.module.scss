@@ -1,0 +1,299 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.OurStory, .OurTeam, .Partners, .Testimonials{@include sec-default();}
+
+.OurTeam { text-align: center;
+  .ImgGrid{@include sec-default();
+    .mobileImg{display: block;}
+    .fwImg{display: none;}
+    
+    .IgBox{margin:40px 0; font-size:17px; display: inline-block; width:43%; width:40%;
+      &.IgRight{
+        float:right; clear:both;
+        .mobileImg {display: none;}
+        .fwImg{display:block;}
+      }
+
+      .textBox{width:90%; float: right; border-left: 2px solid rgba($color2,.3); padding:15px 0 15px 20px;}
+      h4{font-size: 21px; font-weight:bold; color: $color1; font-family: $chels; margin:0 0 3px;}
+      p{color: $color2; font-size:15px;font-weight:bold; font-family: $chels; margin:0;}
+    }
+
+    @include bp(tb) {
+      .IgBox{margin:25px 0;
+        .textBox{padding:15px 0 15px 10px;}
+        h4 {font-size:19px;}
+      }
+    }
+    
+    @include bp(br) {
+      .med3Def{width:600px;}
+      .IgBox{ @include sec-default(); margin:10px 0;  
+        h4 {font-size:18px;}  
+        .textBox, .mobileImg{display: inline-block;}
+        .mobileImg{width:42%; float:left;}
+        .textBox{width:55%; float: right; padding:0; margin-top:12%; 
+          text-align: left; width:50%; padding-left:15px; 
+        }
+        
+        &.IgRight{
+          .fwImg{width:42%; float:right;}
+          .textBox{width:50%; float:left; border-left:0; border-right: 2px solid rgba($color2,.3); padding: 0 15px 0 0;
+          }
+        }
+      }
+    }
+
+    @include bp(oc) {
+      .med3Def{width:85%;}
+      .IgBox, .IgBox.IgRight{ margin:10px 0 40px;
+        .textBox {width:90%; float:right; text-align: left; padding:15px 0 0 15px; border-right:0; border-left:2px solid rgba($color2,.3); 
+          margin-top:0px; width:70%;
+        }
+        .fwImg{display: none;}
+        .mobileImg{@include center-block(); 
+          width:55%;
+        }
+      }
+    }
+
+    @include bp(ph) {
+      .IgBox, .IgBox.IgRight{ 
+        .textBox { width:78%;}
+        .mobileImg{width:70%;}
+      }
+    }
+    
+    @include bp(sm) {
+      .IgBox, .IgBox.IgRight{ 
+        p{font-size:14px;}
+        h4{font-size:17px;}
+        .textBox { width:80%;}
+        .mobileImg{width:80%;}
+      }
+    }
+    
+  }
+}
+
+.Partners {
+  @include bp(tn){
+    .med3Def{width:60%;}
+  }
+  
+  @include bp(oc){
+    .med3Def{width:75%;}
+  }
+  
+  @include bp(sm){
+    .med3Def{width:90%;}
+  }
+}
+
+
+.AboutPage{@include sec-default(); border-top:4px solid $color2; 
+  .tabHD{background-color:$color2; text-align: center;
+    // button{ float:none; margin:0 1%; text-align: center;}
+    // .tabWrap {width:50%; margin-left:30%;}
+  }
+  .tabName{font-size:16px; text-transform: none; letter-spacing:.5px;font-family: $body; font-weight:600; text-shadow: 0px 1px 2px rgba($black,.3);}
+  
+
+  h4.SecName{color:$color1; font-family: $chels; margin-bottom: 10px; font-weight:bold; font-size:1.5em;}
+  .APtop{@include sec-default(); padding:60px 0; 
+    .APTleft, .APTright {display: inline-block; width:28%;}
+    .APTright{width:70%; float:right;}
+    .APTleft{position: relative; z-index: 0; margin-top:40px;
+      &::before{@include before(); width: 75px; height: 75px; background-color: $lt2; left:-20px; top:-20px;}
+    }
+    
+    
+    // position: relative; z-index: 0;
+    // @include sec-bgimage('../../../assets/images/aeriel.png'); background-size:39%; 
+    // &::before{@include before(); background-color: rgba($white,.95);}
+  }
+  
+  .APtwo{ @include sec-default(); padding:60px 0;
+    .AP2left, .AP2right, .AP2leftB, .AP2rightB {display: inline-block; width:45%; text-align: justify;}
+    .AP2left{margin-top:60px;}
+    .AP2right{width:48%; float:right;
+      .imgBox{@include sec-default();}
+      .img1, .img2, .img3 {display: inline-block;}
+      .img1{width:53%; float:right;}
+      .img2, .img3{float:left; width:45%; }
+      .img2{margin-bottom:2%;}
+      // .img2, .img3 {display: inline-block; width:49%; margin-top:2%;}
+      // .img3{float: right;}
+    }
+    .AP2leftB{width:30%; margin-top: -30px;} 
+    .AP2rightB{display: inline;}
+    .AP2rightB{float:right; width:67%; margin-top: 40px;}
+    
+    p span, li{font-family: $chels;}
+    ul {@include center-block(); width:90%;}
+    li{margin-bottom:10px; font-size:18px;}
+  }
+  
+  .APimage{@include sec-default(); margin:0px 0 70px; 
+    .ImgLarge{width:80%; float: right; position: relative; z-index: 1;}
+    .ImgSmall{width: 40%; float: left; position: relative; z-index: 3; margin-top:-27%; margin-top:-30%;}
+    
+    .Text{width:60%; float:right; margin-top:60px; margin-right: -2%; text-align: justify;
+      p.chels{margin-bottom: 10px;}
+    }
+  }
+  
+  .APinstr{ @include sec-default();padding:60px 0;
+    .APIgridL,.APIgridR{display: inline-block; width:42%; }
+    .APIgridR{float:right; width:55%; 
+      p{margin-top:7px;}
+    }
+    
+    .APIgridLsm,.APIgridRlong{display: inline-block; width:65%; }
+    .APIgridRlong {float:right; margin-top:30px;}
+    .APIgridLsm{ width:30%; margin-top:10%;
+      p{font-family: $chels; font-size:18px; }
+    }
+  }
+  
+  .APlodge{ @include sec-default(); padding: 60px 0 70px;
+    li{font-family: $chels;margin-bottom:10px;}
+    
+    .APLtop{h4.SecName{color:$color2;}
+      @include sec-default(); text-align:center; padding-bottom:20px; margin-bottom:70px;
+      position: relative; z-index: 0;
+      &::before{@include before(); background-color:$color1; height:45%; top:55%;}
+      
+      .APLtext{@include center-block(); width:70%; margin-top:40px;
+        p{font-size:18px; color:$white; text-shadow: 0px 1px 1px rgba($black,.2);}
+        span{font-family: $chels; font-size: 16px;}
+      }
+    }
+    
+    .TtextL, .TtextR {display: inline-block; width:65%;}
+    .TtextR{width:30%; float:right; 
+      p{color:$color1; font-weight: bold;text-shadow: 0px 1px 0px rgba($black,.1); margin-bottom: 10px;}
+    }
+  }  
+  
+  @include bp(tb) {
+    .msLink{font-size:14px;}
+    
+    .APtop{ padding:50px 0;
+      h1{font-size:1.6rem;}
+      .APTleft, .APTright {width:30%;}
+      .APTright{width:70%;}
+      .APTleft{margin-top:50px;
+        &::before{ width: 65px; height: 65px; }
+      }
+    }
+    
+    .APtwo{ 
+      .AP2left, .AP2right, .AP2leftB, .AP2rightB {text-align: left;}
+      ul {width:95%; margin-top:15px;}
+      li{font-size:17px;}
+    }
+    
+    .APinstr{
+      h4{font-size:1.3rem;}
+      .APIgridR p{font-size:15px; margin-bottom: 15px;}
+      
+      .APIgridLsm{ width:30%; margin-top:8%;
+        p{font-size:16px; }
+      }
+    }
+  }
+  
+  @include bp(tn) {
+    h4.SecName{font-size:1.2rem;}
+    
+    .tabName{font-size:15px; }
+  
+    .APtop{ padding:35px 0 25px;
+      h1{font-size:1.5rem; margin-bottom: 10px;}
+      .APTleft, .APTright {width:95%; @include center-block();}
+      .APTleft{margin-top:0px;
+        &::before{ width: 55px; height: 55px; display: none;}
+      }
+      
+      position: relative; z-index: 0;
+      &::before{@include before(); width:15%; background-color:$lt2; left:4%; height:90%; top:5%;}
+    }
+    
+    .APtwo{ 
+      p{margin-top:6px;}
+      .AP2left{margin-top:10px;width:50%;}
+      .AP2right{width:45%;}
+      .AP2leftB,.AP2rightB{@include sec-default(); margin-top:10px;;
+        ul {@include sec-default(); margin-top:25px; text-align: center;}
+        li{font-size:15px; display: inline-block; width:45%; margin-left:2%;}
+      }
+      .AP2leftB{ margin-top: 0px;} 
+      
+    }
+    
+    .APinstr{padding:40px 0 20px;
+      .APIgridL{ display: none;}
+      .APIgridR,.APIgridLsm{@include sec-default();}
+      
+      .APIgridRlong {width:80%; @include center-block(); margin-top:30px;}
+      .APIgridLsm{ margin-top:20px;
+        p{ font-size:16px; }
+      }
+    }
+    
+    .APlodge{  padding: 40px 0;
+      .APLtop{
+        padding-bottom:20px; margin-bottom:40px;
+        position: relative; z-index: 0;
+        &::before{@include before(); background-color:$color1; height:55%; top:45%;}
+
+        h4.SecName{margin-bottom:20px;}
+        
+        .APLtext{width:95%; margin-top:25px;
+          p{font-size:16px; }
+          span{font-size: 15px;}
+        }
+      }
+      
+      .TtextL, .TtextR { @include sec-default();}
+      .TtextR{margin-top:40px; text-align:center;}
+      .msLink{@include center-block();}
+    }  
+  }
+  
+  @include bp(oc) {
+    h4.SecName{font-size:1.1rem;}
+    
+    // .tabHD{
+    //   button{ margin-left:3%;}
+    //   .tabWrap {@include sec-default();margin-left:0; padding-left:0px;}
+    // }
+    
+    .APtop{ 
+      h1{font-size:1.3rem;}
+      .APTleft, .APTright {width:98%;}
+    }
+    
+    .APtwo{ padding:30px 0;
+      .AP2left{margin-top:0px;@include sec-default();}
+      .AP2right{@include sec-default(); text-align: center;
+        .img3, .img2 {width:40%; float:none; margin:10px 1%;}
+        .img1{display: none;}
+      }
+      .AP2leftB,.AP2rightB{@include sec-default(); margin-top:0px;
+        ul{margin-top: 10px;}
+        li{@include sec-default();}
+      }
+      .msLink{@include center-block(); width:80%;}
+    }
+    
+    .APlodge{  
+      .APLtop::before{height:70%; top:30%;}
+      .msLink{@include center-block(); width:70%;}
+    }  
+  }
+}

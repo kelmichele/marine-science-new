@@ -1,0 +1,84 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.Faq, .Promoting {@include sec-default(); padding-bottom:60px;}
+
+.Packing{
+  .introText {@include sec-default();
+    p {font-family: $chels; font-size: 17px;
+      span {color: $color1; font-family: inherit;font-weight: 600;}
+      b {text-decoration: underline;}
+    }
+  }
+  
+  .checkLists{@include sec-default();
+    text-align:center; 
+    .msLink {display: inline-block; 
+      width:175px; margin: 10px 2% 10px 0;
+      
+      box-shadow: 0px 5px 18px rgba($color2,.25);
+      text-shadow: 0px 1px 2px rgba($black,.2);
+      
+      &:last-child{margin-bottom: 0;}
+    }
+    .msLink{float:left;}
+  }
+  
+  @include bp(tb) {
+    .checkLists {text-align:left; 
+      .msLink {margin-left: 0;}
+    }
+  }
+  
+  @include bp(br) {
+    .checkLists .msLink {width:auto;}
+  }
+  @include bp(tn) {
+    .introText p{font-size:16px; margin-bottom: 10px;}
+    .checkLists {margin-bottom: 30px; 
+      .msLink{width:45%;@include center-block(); }
+    }
+  }
+  
+  @include bp(oc) {
+    .checkLists .msLink{width:75%;}
+    
+  }
+  
+}
+
+.Promoting {
+  .PromotingBody{@include sec-default(); margin-top:10px;}
+  .vidBox {width:85%;@include center-block();}
+  .textBox {width:60%;@include center-block();}
+  h4{margin-bottom:7px;}
+  h3{text-transform: capitalize; font-size: 1.6rem;}
+  iframe {width:100%; height:449.9px; margin-bottom:65px;}
+  li {margin-bottom:10px; padding:7px 0 5px 30px;
+    position: relative; 
+    &::before {@include before(); width:4%; font-size:25px; font-family: $chels; line-height: 1.5em; color: $color1;}
+
+    &:first-child::before {content:"1."}
+    &:nth-child(2)::before {content:"2."}
+    &:nth-child(3)::before {content:"3."}
+    &:nth-child(4)::before {content:"4."}
+    &:nth-child(5)::before {content:"5."}
+    &:nth-child(6)::before {content:"6."}
+    &:nth-child(7)::before {content:"7."}
+    &:nth-child(8)::before {content:"8."}
+    &:nth-child(9)::before {content:"9."}
+    &:nth-child(10)::before {content:"10."}
+    &:nth-child(11)::before {content:"11."}
+    &:nth-child(12)::before {content:"12."}
+    &:nth-child(12),&:nth-child(10) {padding-left:35px;}
+    &:first-child {padding-left:25px;}
+
+    // &:nth-child(2n+2) {margin-left:25px;}
+  }
+}
+
+.Faq{
+  p b, p a {color:$color1;}
+}

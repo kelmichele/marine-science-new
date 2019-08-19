@@ -1,0 +1,33 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+.Contact {@include sec-default();
+  .ContactBody {@include sec-default(); padding:60px 0;}
+  h2{margin-bottom: 20px; font-family: $chels; font-size:1.4rem; border-bottom:1px solid rgba($color2,.15); color: $color1;}
+  h3{margin:0px 0 5px; font-family: $chels; color: $color2;}
+  p b {color: $color2}
+  // .ContactLeft, .ContactRight {display: inline-block; width:35%;}
+  // .ContactRight {float:right; width:56%;}
+  
+  .ContactLeft, .ContactRight {display: inline-block; width:45%;}
+  .ContactRight {float:right;}
+  
+  @include bp(br) {
+    h2{font-size: 1.2rem; margin-bottom: 15px;}
+    h3{font-size: 1rem;}
+  }
+  @include bp(tn) {
+    h2{font-size: 1.1rem;}
+  }
+  
+  @include bp(oc) {
+    .ContactLeft, .ContactRight {@include sec-default();}
+    .ContactRight {margin-bottom:20px;}
+    .msLink.inline, .msLink.inline.last{width:60%; float:left; margin:0 0 15px 0;}
+  }
+  
+  @include bp(sm) {
+    .msLink.inline, .msLink.inline.last{width:80%;}
+  }  
+}

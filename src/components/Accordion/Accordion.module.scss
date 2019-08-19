@@ -1,0 +1,73 @@
+@import '../../assets/global.scss';
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.Accordion {
+  @include sec-default();
+  // @include center-block(); width:50%;
+  li {@include sec-default(); margin-top: 15px; text-align:left;}
+  button {background-image:none; background:transparent; border:none; font-family: $chels;}
+
+  .custContent{padding-left: 20px;}
+  
+  
+  // testimonial
+  &.noLeft {
+    li{margin-bottom: 15px;}
+    button {@include sec-default(); text-align: left;
+      font-family: $chels; font-weight:bold; font-size:1.5rem;
+      border-bottom:1px solid rgba($black,.1); padding-bottom:7px; color: darken($color2, 10%);
+    }
+    .custContent {padding-left:0;}
+    
+    @include bp(tb) {
+      button {font-size:1.3rem; text-align: left;}
+    }
+    
+    @include bp(tn) {
+      button {font-size:1.2rem;}
+    }
+    
+    @include bp(oc) {
+      button {font-size:1.1rem;}
+    }
+  }
+  
+  &.faqAcc{
+    li{border-bottom:1px solid rgba($dk2,.1); padding-bottom:5px;}
+    @include bp(tb) {
+      button {text-align: left;}
+    }
+    
+    @include bp(tn) {
+      button {font-size:1.1rem;}
+      .custContent {font-size:15px; padding-left:10px;
+        p{font-size:15px;}
+      }
+    }
+    
+    @include bp(oc) {
+      button {font-size:1rem;}
+    }
+  }
+  
+  
+  &.FtAcc{
+    li{margin:0 0 15px;}
+
+    button{color:$white; padding-top:0;border-bottom:1px solid rgba($lt2,.1); text-shadow:0px 1px 1px rgba($black,.2);font-size:1rem;
+      &::before svg{color:$white;}
+    }
+    .custContent {padding-left:5px;}
+    
+    li li {margin: 0 0 10px; font-weight:600;}
+    
+    @include bp(br) {
+      button{font-size: 15px;}
+    }
+  }
+  
+  &.trAcc {
+    .custContent{padding-left:0;}
+  }
+}

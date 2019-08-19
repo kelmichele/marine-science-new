@@ -1,0 +1,198 @@
+@import '../../../assets/global.scss';
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+
+.ProfessionalDevelopmentSeminars{@include sec-default();  
+  .PDSPage{@include sec-default(); border-top:4px solid $color2; 
+    .tabHD{background-color:$color2; text-align: center;
+      // button{ float:none; margin:0 1%; text-align: center;}
+      // .tabWrap {width:50%; margin-left:31%;}
+    }
+    .tabName{font-size:16px; text-transform: none; letter-spacing:.5px;font-family: $body; font-weight:600; text-shadow: 0px 1px 2px rgba($black,.3);}
+    
+
+    h4.SecName{color:$color1; font-family: $chels; margin-bottom: 10px; font-weight:bold; font-size:1.5em;}
+    .APtop{@include sec-default(); padding:60px 0; 
+      .APTleft, .APTright {display: inline-block; width:40%;}
+      .APTright{width:55%; float:right;}
+      .APTleft{position: relative; z-index: 0; margin-top:0px;
+        &::before{@include before(); width: 75px; height: 75px; background-color: $lt2; left:-20px; top:-20px;}
+      }
+    }
+    
+    .APtwo{ @include sec-default(); padding:60px 0 0;
+      .AP2left, .AP2right, .AP2leftB, .AP2rightB {display: inline-block; width:45%; text-align: justify;}
+      .AP2left{margin-top:30px;}
+      .AP2right{width:48%; float:right;
+        .imgBox{@include sec-default();}
+        .img1, .img2{display: inline-block;}
+        .img1, .img2{float:left; width:49%; }
+        .img2{float:right;}
+        .img3 {@include sec-default();margin-top:2%;}
+        
+      }
+      
+      .fullSec{margin-top:40px; width:80%; @include center-block();}
+      .AP2leftB{width:33%;} 
+      .AP2rightB{float:right; width:60%; margin-top: 40px;
+        p{font-weight:bold;}
+      }
+
+      .BookPDS{@include sec-default(); padding:30px 0 45px; background-color: darken($color2, 18%); margin-top:60px;
+      text-align: center;
+        h5, p {color: $white; font-weight:600;font-size:17px;}
+        h5{font-family:$chels; font-size:23px; letter-spacing: 1px;}
+        .msLink{box-shadow: 0px 5px 18px rgba($black,.5); text-shadow:0px 1px 1px rgba($black,.2); 
+          // background-color: $yellow; color:darken($color2, 18%);
+        }
+      }
+    }
+    
+    .APlodge{ @include sec-default(); padding: 60px 0 0;
+      li{font-family: $chels;margin-bottom:10px;}
+      
+      .APLtop{
+        h4.SecName{color:$color2;}
+        @include sec-default(); text-align:center; padding-bottom:40px;
+        position: relative; z-index: 0;
+        &::before{@include before(); background-color:$color1; height:45%; top:55%;}
+        
+        .APLtext{@include center-block(); width:70%; margin-top:40px;
+          p{font-size:18px; color:$white; text-shadow: 0px 1px 1px rgba($black,.2);}
+          span{font-family: $chels; font-size: 16px;}
+        }
+      }
+      
+      .TtextL, .TtextR {display: inline-block; width:65%;}
+      .TtextR{width:30%; float:right; 
+        p{color:$color1; font-weight: bold;text-shadow: 0px 1px 0px rgba($black,.1); margin-bottom: 10px;}
+      }
+      .msLink{box-shadow: 0px 5px 18px rgba($black,.1); }
+    }  
+    
+    .Testimonials{@include sec-default(); padding:60px 0;
+    
+      .testiRow{width:48%; display: inline-block;}
+      .testiRow{float: right; margin-top: 40px;
+        &:nth-child(2) {float:left; margin-top:0;}
+      }
+      .TestiContent{margin:15px 0 30px;
+        &.focal {font-size:18px; font-family:$chels; padding:10px 0;
+          border-top:1px solid rgba($black,.1);border-bottom:1px solid rgba($black,.1);
+        }
+      }
+    
+    }
+    
+    @include bp(tb) {
+      .APtop{ padding:50px 0;
+        h1{font-size:1.5rem;}
+        .APTleft {width:35%;}
+        .APTright{width:63%;}
+        .APTleft{
+          &::before{ width: 65px; height: 65px; }
+        }
+      }
+    }
+    
+    @include bp(tn){
+      h4.SecName{font-size:1.2rem;}
+      .tabName{font-size:15px; }
+      
+      .APtop{ padding:35px 0 25px;
+        h1{font-size:1.5rem; margin-bottom: 10px;}
+        .APTleft, .APTright {width:95%; @include center-block();}
+        .APTleft{margin-top:0px;
+          &::before{ width: 55px; height: 55px; display: none;}
+        }
+        
+        position: relative; z-index: 0;
+        &::before{@include before(); width:15%; background-color:$lt2; left:4%; height:90%; top:5%;}
+      }
+      
+      .APtwo{padding:40px 0 0;
+        .AP2left, .AP2right, .AP2leftB, .AP2rightB {text-align: left;}
+        .AP2left{margin-top:0px; @include sec-default();
+          p{margin-top:5px;}
+        }
+        .AP2right{@include sec-default();
+          .imgBox{text-align:center;margin-top:20px;}
+          .img1, .img2, .img3{display: inline-block; margin: 0 5px; height:150px; width:auto; float:none;}
+          .img2{display: none;}
+        }
+        
+        .fullSec{margin-top:40px; width:90%;}
+        .AP2leftB{width:28%;} 
+        .AP2rightB{margin-top: 15px; width:70%;
+        }
+
+        .BookPDS{padding:30px 0 45px; margin-top:40px;
+          p {font-size:16px;}
+          h5{font-size:20px;}
+        }
+      }
+      
+      .APlodge{  padding: 40px 0 0;
+        .APLtop{padding-bottom:40px;
+          position: relative; z-index: 0;
+          &::before{@include before(); background-color:$color1; height:55%; top:45%;}
+
+          h4.SecName{margin-bottom:20px;}
+          
+          .APLtext{width:95%; margin-top:25px;
+            p{font-size:16px; }
+            span{font-size: 15px;}
+          }
+        }
+      }
+      
+      .Testimonials {padding:40px 0;
+        .testiRow{@include sec-default(); margin-top:0;}
+        .TestiContent{margin:15px 0 20px;@include sec-default();
+          position: relative; z-index: 0;
+          &::before{@include before(); width:10px; left:-18px; background-color: $lt2;}
+          &:nth-child(2n+2) {float:right;
+          }
+          &.focal {font-size:16px;}
+        }
+      }
+    }
+    
+    @include bp(oc) {
+      h4.SecName{font-size:1.1rem;}
+      
+      // .tabHD{
+      //   button{ margin-left:3%;}
+      //   .tabWrap {@include sec-default();margin-left:0;}
+      // }
+    
+      .APtop{ 
+        h1{font-size:1.3rem;}
+        .APTleft, .APTright {width:98%;}
+      }
+      
+      .APtwo {
+        .AP2right {
+          .img1 {display: none;} 
+          .img3 {height:auto; @include sec-default();}
+        }
+        
+        .AP2leftB{width:175px; @include center-block();}
+        .AP2rightB{margin-top: 15px; @include sec-default(); text-align: center;}
+        
+        .BookPDS{padding:20px 0 35px; margin-top:20px;
+          p {font-size:16px;}
+          h5{font-size:18px;}
+        }
+      }
+      
+      .APlodge {
+        .APLtop::before{height:70%; top:30%;}
+        .msLink{@include center-block(); width:70%;}
+      }
+    }  
+  }
+  
+
+}

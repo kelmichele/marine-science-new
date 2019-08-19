@@ -1,0 +1,14 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+@import '../../assets/global.scss';
+
+.ImageText{@include sec-default(); margin-bottom: 60px;
+  .ImageHlf, .TextHlf {display: inline-block; width:48%;}
+  .ImageHlf {float: right;}
+
+  &.textRight {
+    .ImageHlf {float: left;}
+    .TextHlf {float:right;}
+  }
+
+}
