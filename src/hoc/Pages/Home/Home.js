@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Home.module.scss";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 // import Parallax from "../../../components/Parallax/Parallax";
 import bg3 from "../../../assets/images/classes15.jpg";
@@ -36,6 +37,11 @@ class Home extends Component {
   render() {
     return (
       <div className={classes.Home}>
+        <Helmet>
+          <title>Marine Science Adventures</title>
+          <meta name="description" content="Marine Science Adventures is a 3-day, hands-on field trip where students in grades 3-12 explore the ecosystems along the Gulf Coast." />
+        </Helmet>
+      
         <div className={classes.SiteIntroVideo}>
            {/* uk-parallax="bgx: -150" */}
           {plaxContent1}
@@ -72,12 +78,12 @@ class Home extends Component {
                 <h3><span>Explore</span><br/> a variety of marine habitats hands-on</h3>
                 <Link className={[classes.msLink, classes.inline, classes.gradi].join(' ')} to="/trip-maps">Directions &amp; details for each trip</Link>
               </div>
-              <img src={pl8} className={[classes.imgResponsive, classes.PLimg, classes.zLow].join(' ')} alt="ph" />
-              <img src={pl1} className={[classes.imgResponsive, classes.PLimg, classes.zTop].join(' ')} alt="ph" />
+              <img src={pl8} className={[classes.imgResponsive, classes.PLimg, classes.zLow].join(' ')} alt="MSA students and chaperone seining in the gulf water" />
+              <img src={pl1} className={[classes.imgResponsive, classes.PLimg, classes.zTop].join(' ')} alt="Marine Science Adventures Biologist teaching a class on the beach" />
             </div>
             
             <div className={classes.PLRtwo}>
-              <img src={pl7} className={[classes.imgResponsive, classes.PLimg, classes.zBot].join(' ')} alt="ph" />
+              <img src={pl7} className={[classes.imgResponsive, classes.PLimg, classes.zBot].join(' ')} alt="MSA Biologist leading class through the marsh waters" />
               <div className={classes.plText}>
                 <h3><span>Engage</span><br/> your students, and make them excited to learn</h3>
                 <Link className={[classes.msLink, classes.inline, classes.gradi].join(' ')} to="/our-story">Learn More</Link>
@@ -115,7 +121,7 @@ class Home extends Component {
         <div className={classes.clearfix} />
         
         <div className={[classes.photoGall, ["uk-grid"]].join(' ')} uk-lightbox="animation: slide;">
-          <div className="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push" style={{ paddingLeft: '0'}}>
+          <div className="uk-position-relative uk-visible-toggle" tabIndex="-1" data-uk-slideshow="animation: push" style={{ paddingLeft: '0'}}>
             <ul className={[classes.photoItems,"uk-slideshow-items"].join(' ')}>
               <li className={classes.photoLi}>
                 <img src={bg3} className={[classes.imgResponsive, "uk-position-bottom-left"].join(' ')} alt="" />
@@ -137,11 +143,11 @@ class Home extends Component {
               </li>
             </ul>
             {/* <ul className={[classes.slideDots, "uk-slideshow-nav uk-dotnav"].join(' ')}></ul> */}
-            <button type="button" className={["uk-position-center-left uk-position-small uk-hidden-hover", classes.ArrowRules].join(' ')} href="#" data-uk-slidenav-previous data-uk-slideshow-item="previous">
-              <span uk-icon="icon: chevron-left; ratio: 1.5"></span>
+            <button type="button" className={["uk-position-center-left uk-position-small", classes.ArrowRules].join(' ')} href="#" data-uk-slidenav-previous data-uk-slideshow-item="previous">
+              {/*  uk-hidden-hover <span uk-icon="icon: chevron-left; ratio: 1.5"></span> */}
             </button>
-            <button type="button" className={["uk-position-center-right uk-position-small uk-hidden-hover", classes.ArrowRules].join(' ')} href="#" data-uk-slidenav-next data-uk-slideshow-item="next">
-              <span uk-icon="icon: chevron-right; ratio: 1.5"></span>
+            <button type="button" className={["uk-position-center-right uk-position-small", classes.ArrowRules].join(' ')} href="#" data-uk-slidenav-next data-uk-slideshow-item="next">
+              {/*  uk-hidden-hover <span uk-icon="icon: chevron-right; ratio: 1.5"></span> */}
             </button>
           </div>
         </div>

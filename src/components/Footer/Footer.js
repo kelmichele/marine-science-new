@@ -3,7 +3,6 @@ import classes from './Footer.module.scss';
 import Social from "../../hoc/Social/Social";
 import Copy from "./Copy";
 import { NavLink } from "react-router-dom";
-// import logo from "../../assets/images/logo-msLt.png";
 import Accordion from "../../components/Accordion/Accordion";
 
 const Menu1 = (
@@ -38,7 +37,7 @@ const Menu3 = (
 
 
 const footer = () => {
-  const accItems = [
+  const ftAccItems = [
     {id: 101, title: 'About Us', content: [Menu1]},
     {id: 102, title: 'About the Trip', content: [Menu2]},
     {id: 103, title: 'Educational Details', content: [Menu3]},
@@ -68,13 +67,8 @@ const footer = () => {
           <div className={classes.gin}>
             <h4>Get Information</h4>          
 
-            <Accordion accItems={accItems} altClass="FtAcc" Shade="uk-light" />          
+            <Accordion accItems={ftAccItems} altClass="FtAcc" Shade="uk-light" />          
           </div>
-          
-          
-          {/* <NavLink className={classes.FtLogo} to="/">
-            <img src={logo} alt="Marine Science Adventures Logo" className={classes.imgResponsive} />
-          </NavLink> */}
         </div>
       </div>  
           
